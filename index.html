@@ -1,0 +1,29 @@
+<!--the code below adapted from https://www.webcodegeeks.com/html5/html5-file-upload-example/ -->
+
+<h3>Welcome to the file upload API.  This will only work in browsers capable of HTML5.  Upgrade your browser if it doesn't work!</h3><br>
+
+<input type="file" id="fileinput" />
+
+<script>
+var name, size, type;
+
+document.getElementById('fileinput').addEventListener('change', function(){
+
+    var file = this.files[0];
+
+    console.log("name : " + file.name);  name = file.name;
+
+    console.log("size : " + file.size);  size = file.size;
+
+    console.log("type : " + file.type);  type = file.type;
+
+var node = document.createElement('div');    
+        node.id="fileprops";     
+        node.innerHTML='{"name": "'+name+'", "size": "'+size+'"}';
+        document.body.appendChild(node);
+}, false);
+
+
+
+</script>
+
